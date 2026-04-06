@@ -216,17 +216,16 @@ To mitigate the identified risks (Slowloris DoS and unauthorized access), I reco
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/44c9a43f946e5e70127eb747016e5326c136d647/images/5.png)
 
 
+### 🏁 Final Project Conclusion
+This Nmap lab provided a full-cycle security assessment of a local network environment. By moving from Basic Discovery to Advanced Vulnerability Scripting, I demonstrated:
 
+Ability to map an attack surface and identify critical assets.
 
+Deep understanding of TCP/UDP protocols and network responses (syn-ack, rst).
 
+Skill in identifying and validating CVE-2007-6750 (Slowloris).
 
-
-
-
-
-
-
-
+Capacity to provide actionable remediation steps to stakeholders.
 
 
 
