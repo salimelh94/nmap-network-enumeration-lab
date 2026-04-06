@@ -144,8 +144,76 @@ Security Posture: The device follows the Principle of Least Privilege by only ex
 
 Hardening Verification: No high-risk or legacy ports were detected, such as SSH (22), Telnet (23), or non-standard UPnP ports. This indicates a solid baseline security configuration.
 
+🔍 6.3 Phase: UDP Service Discovery
+To ensure a comprehensive analysis of the target's attack surface, I performed a UDP Scan. Unlike TCP, UDP is a connectionless protocol, which requires a different scanning approach and often results in longer durations due to the lack of session acknowledgments.
+
+Target IP: 192.168.1.1
+
+Command: nmap -sU 192.168.1.1 -oN task3_udp_scan.txt
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/bfdde381b21111f4c60db6b5e3b1a4dd19042205/images/udp-1.png)
 
 
+Flag Explanation (-sU): Instructs Nmap to perform a UDP scan to identify services like DNS, SNMP, or DHCP that do not use TCP handshakes.
+
+Flag Explanation (-oN): Redirects the output to a standard text file (task3_udp_scan.txt) for the project's audit trail.
+
+The scan identified that the majority of the 1,000 scanned ports are secured, with only one confirmed service active : 53/udp 
+nterpretation & Security Assessment
+Significance of Port 53/UDP:
+Port 53 is designated for the Domain Name System (DNS). Gateways often perform DNS forwarding to enhance local browsing speeds. Seeing this open for both TCP and UDP (as noted in Task 2 and 3) is a standard configuration.
+
+Hardening Verification:
+The absence of common UDP services such as SNMP (161) or NTP (123) suggests that the device has been hardened. Many ISP-provided devices hide or filter these services to prevent remote exploitation.
+
+Final Posture:
+The router demonstrates a strong security posture by rejecting the vast majority of UDP services and only exposing essential DNS functionality.
+
+### 🔬 7️⃣ Phase: Port State Analysis & Vulnerability Research
+In this final phase, I investigated the "Reason" behind port states and executed Nmap Scripting Engine (NSE) scripts to identify potential security flaws.
+
+7.1: Network Response Analysis (--reason)
+I used the --reason flag to understand exactly why Nmap categorized ports as open or closed.
+
+Command: nmap --reason -p- 192.168.1.1 -oN task4_reasons.txt
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/da9a312cb2e3293032730e54ce92eb745b37d25e/images/final%201.png)
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/da9a312cb2e3293032730e54ce92eb745b37d25e/images/final%202.png)
+
+Key Finding: Open ports (53, 80, 443) returned a syn-ack with a ttl 64. This confirms a classic Linux-based TCP/IP stack, typical for embedded router firmware.
+
+Closed Ports: 65,532 ports returned a reset (RST) packet, indicating the device is reachable but no service is listening.
+
+7.2: Lightweight Vulnerability Scan
+[!CAUTION]
+Safety Reminder: Only perform vulnerability scans on authorized systems. These scans can be resource-intensive and may trigger security alerts.
+
+Command: nmap --script vuln 192.168.1.1 -oN task5_vuln_scan.txt
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/4509e35093c37142ee6ea2149f0a473a13869452/images/final%203.png)
+
+Objective: To cross-reference open services against known vulnerability databases (CVEs).
+
+
+Primary Finding: Slowloris DoS (CVE-2007-6750)
+The scan identified a Likely Vulnerable state on both HTTP (80) and HTTPS (443) ports
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/4509e35093c37142ee6ea2149f0a473a13869452/images/4.png)
+
+### 7.3: Validation & Manual Review
+As a security analyst, I validated the findings to filter out false positives:
+
+Vendor Identification: The MAC Address 6C:D7:19:36:DE:B8 confirms the manufacturer is Fiberhome Telecommunication.
+
+Custom Firmware: The web interface uses proprietary code rather than standard Apache/Nginx. This often triggers "Generic" vulnerability detections in Nmap.
+
+Security Headers: Manual review confirmed the presence of X-Frame-Options and HSTS, indicating that the vendor has implemented some modern security controls.
+
+🛡️ 8️⃣ Recommended Remediation
+To mitigate the identified risks (Slowloris DoS and unauthorized access), I recommend the following security controls:
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/44c9a43f946e5e70127eb747016e5326c136d647/images/5.png)
 
 
 
