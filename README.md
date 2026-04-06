@@ -132,6 +132,7 @@ After Scan Completion we open the output: task2_syn_scan.txt and we will see res
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/8dc75d4babc958c29cf87dfdc0b43d0a64527fa7/images/task2.png)
 
 Phase 6.3: Final Security Assessment & Findings
+
 After comparing the results from the different scanning methodologies, I consolidated the key findings into a final security audit table for the target gateway (192.168.1.1)
 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/a8732f988921e20fe13a34ecbc59c73006834698/images/6-3.png)
@@ -145,6 +146,7 @@ Security Posture: The device follows the Principle of Least Privilege by only ex
 Hardening Verification: No high-risk or legacy ports were detected, such as SSH (22), Telnet (23), or non-standard UPnP ports. This indicates a solid baseline security configuration.
 
 🔍 6.3 Phase: UDP Service Discovery
+
 To ensure a comprehensive analysis of the target's attack surface, I performed a UDP Scan. Unlike TCP, UDP is a connectionless protocol, which requires a different scanning approach and often results in longer durations due to the lack of session acknowledgments.
 
 Target IP: 192.168.1.1
@@ -170,6 +172,7 @@ Final Posture:
 The router demonstrates a strong security posture by rejecting the vast majority of UDP services and only exposing essential DNS functionality.
 
 ### 🔬 7️⃣ Phase: Port State Analysis & Vulnerability Research
+
 In this final phase, I investigated the "Reason" behind port states and executed Nmap Scripting Engine (NSE) scripts to identify potential security flaws.
 
 7.1: Network Response Analysis (--reason)
@@ -186,6 +189,7 @@ Key Finding: Open ports (53, 80, 443) returned a syn-ack with a ttl 64. This con
 Closed Ports: 65,532 ports returned a reset (RST) packet, indicating the device is reachable but no service is listening.
 
 7.2: Lightweight Vulnerability Scan
+
 [!CAUTION]
 Safety Reminder: Only perform vulnerability scans on authorized systems. These scans can be resource-intensive and may trigger security alerts.
 
@@ -202,6 +206,7 @@ The scan identified a Likely Vulnerable state on both HTTP (80) and HTTPS (443) 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/4509e35093c37142ee6ea2149f0a473a13869452/images/4.png)
 
 ### 7.3: Validation & Manual Review
+
 As a security analyst, I validated the findings to filter out false positives:
 
 Vendor Identification: The MAC Address 6C:D7:19:36:DE:B8 confirms the manufacturer is Fiberhome Telecommunication.
@@ -211,12 +216,14 @@ Custom Firmware: The web interface uses proprietary code rather than standard Ap
 Security Headers: Manual review confirmed the presence of X-Frame-Options and HSTS, indicating that the vendor has implemented some modern security controls.
 
 🛡️ 8️⃣ Recommended Remediation
+
 To mitigate the identified risks (Slowloris DoS and unauthorized access), I recommend the following security controls:
 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/44c9a43f946e5e70127eb747016e5326c136d647/images/5.png)
 
 
 ### 🏁 Final Project Conclusion
+
 This Nmap lab provided a full-cycle security assessment of a local network environment. By moving from Basic Discovery to Advanced Vulnerability Scripting, I demonstrated:
 
 Ability to map an attack surface and identify critical assets.
