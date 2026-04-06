@@ -87,7 +87,7 @@ Unknown Host (192.168.1.3): Although "silent," this host warrants further monito
 Summary of Security Posture
 The network appears well-maintained with no immediate "low-hanging fruit" vulnerabilities like unencrypted management ports. The primary focus for future hardening should be the SMB and Splunk interfaces on the Windows host to prevent unauthorized access to sensitive logs or file shares.
 
-###🔍 6️⃣ Extended Tasks: Nmap Deep-Dive
+### 🔍 6️⃣ Extended Tasks: Nmap Deep-Dive
 
 
 Phase 6.1: Operating System Detection & Fingerprinting
@@ -102,6 +102,15 @@ Flag Explanation (-O): Enables OS detection by analyzing TCP/IP stack fingerprin
 Flag Explanation (-oN): Redirects the output into a formatted text file (task1_os_detection) for professional documentation.
 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/fc34f4c56941664a7f24a88c664719068416f369/images/task.1.png)
+
+OS Fingerprint Results
+The scan generated a series of OS guesses based on the target's network response patterns:
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/80409a337ec5d9dc48e69525bdd52c06ee2666c3/images/2.png)
+
+
+
+
 
 
 
