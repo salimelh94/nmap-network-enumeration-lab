@@ -34,7 +34,7 @@ Flag Explanation (-sn): This flag disables port scanning. Nmap sends ICMP echo r
 
 Technical Benefit: Using a ping scan is a "stealthier" and faster way to discover active devices compared to a full connect scan, as it avoids triggering alerts for unauthorized port access on many basic monitoring systems.
 
-IMAGEN
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/2.ping%20sweep.png)
 
 Results:
 The scan successfully identified 4 live hosts within the 192.168.1.0/24 subnet. This allowed me to narrow down the targets for the subsequent service enumeration and vulnerability analysis phases.
@@ -53,7 +53,9 @@ Port	   Status	   Service	          Analyst Insights
 Security Interpretation:
 Fingerprinting results strongly suggest this is a network gateway (router). The limited number of open ports indicates a reduced attack surface, following a standard security posture for consumer or small-office networking equipment. 
 Save results to a file for reporting 
-IMAGE 1  y 2
+
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/3.sv.png)
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/Screenshot%202026-04-06%20200916.png)
 
 
 📊 4️⃣ Documentation of Findings & Security Analysis
@@ -63,7 +65,9 @@ Host IP	        Status	   Open Ports	                                    Identif
 192.168.1.1	     Up	       53, 80, 443	                    Router (DNS, HTTP/S)	Low Risk. Standard gateway configuration with web management enabled.				
 192.168.1.22	   Up	     135, 139, 445, 8000/8089	          Windows Host (SMB, Splunk)	Medium Risk. Critical Windows services (SMB) and Splunk dashboard exposed.				
 192.168.1.3	     Up	      None	Unknown Device	            Filtered. Device is active but hardened; no services are exposed to the network.				
-192.168.1.4	    Down	    None	N/A	Offline.                Host did not respond to ICMP or ARP probes during the scan.				
+192.168.1.4	    Down	    None	N/A	Offline.                Host did not respond to ICMP or ARP probes during the scan.		
+
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/4.Report.png)
 
 🔍 5️⃣ Investigation & Professional Interpretation
 As a Security Analyst, I reflected on the discovered landscape to identify anomalies or potential threats:
