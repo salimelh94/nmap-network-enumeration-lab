@@ -7,7 +7,7 @@
 This project demonstrates professional infrastructure discovery and security auditing techniques using **Nmap**. The primary objective was to identify the attack surface of a local network by enumerating active hosts, identifying open ports, and fingerprinting services/OS versions.
 
 > **Key Skill:** Reconnaissance & Threat Modeling for SOC Analysts.
-## 🛠️ Tech Stack & Tools
+### Tech Stack & Tools
 * **Operating System:** Kali Linux (Rolling Edition)
 * **Scanner:** Nmap (Network Mapper)
 * **Documentation:** Markdown & VS Code
