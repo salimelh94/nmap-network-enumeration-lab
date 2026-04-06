@@ -108,6 +108,28 @@ The scan generated a series of OS guesses based on the target's network response
 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/80409a337ec5d9dc48e69525bdd52c06ee2666c3/images/2.png)
 
+Phase 6.2: Stealth Scanning (TCP SYN Scan)
+In this task, I performed a TCP SYN Scan (also known as a "Half-Open" scan) on the gateway to compare efficiency and stealthiness against previous service scans.
+
+Command: nmap -sS 192.168.1.1 -oN task2_syn_scan.txt
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/0d9a4c49c1ce79cc4a18265a70cd4796a9b100d9/images/6-2-2-2.png)
+
+
+Flag Explanation (-sS): This is the default and most popular scan for good reason. It sends a SYN packet but never completes the 3-way handshake, making it harder for simple logging systems to detect while remaining very fast.
+
+Flag Explanation (-oN): Formats the scan results into a standard text file for the project's audit trail.
+
+Technical Comparison & Reasoning 
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/14fedd1c07f7ed1e734137479eab34bc2ea15c2b/images/6-2-2.png)
+
+
+Analyst Insight: By utilizing the -sS flag, I was able to verify that the three primary ports (53, 80, 443) were responsive without needing to establish a full TCP session. 
+This technique is standard in professional assessments to minimize the "noise" generated on the target network's monitoring logs.
+
+After Scan Completion we open the output: task2_syn_scan.txt and we will see results similar to :
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/8dc75d4babc958c29cf87dfdc0b43d0a64527fa7/images/task2.png)
 
 
 
