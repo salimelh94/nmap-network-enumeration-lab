@@ -131,6 +131,20 @@ This technique is standard in professional assessments to minimize the "noise" g
 After Scan Completion we open the output: task2_syn_scan.txt and we will see results similar to :
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/8dc75d4babc958c29cf87dfdc0b43d0a64527fa7/images/task2.png)
 
+Phase 6.3: Final Security Assessment & Findings
+After comparing the results from the different scanning methodologies, I consolidated the key findings into a final security audit table for the target gateway (192.168.1.1)
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/a8732f988921e20fe13a34ecbc59c73006834698/images/6-3.png)
+
+
+Final Reconnaissance Conclusion
+Consistency: All three open ports match the expected services identified during the OS Detection phase (Fiberhome/Linux Router).
+
+Security Posture: The device follows the Principle of Least Privilege by only exposing essential services.
+
+Hardening Verification: No high-risk or legacy ports were detected, such as SSH (22), Telnet (23), or non-standard UPnP ports. This indicates a solid baseline security configuration.
+
+
 
 
 
