@@ -87,6 +87,22 @@ Unknown Host (192.168.1.3): Although "silent," this host warrants further monito
 Summary of Security Posture
 The network appears well-maintained with no immediate "low-hanging fruit" vulnerabilities like unencrypted management ports. The primary focus for future hardening should be the SMB and Splunk interfaces on the Windows host to prevent unauthorized access to sensitive logs or file shares.
 
+###🔍 6️⃣ Extended Tasks: Nmap Deep-Dive
+
+
+Phase 6.1: Operating System Detection & Fingerprinting
+In this phase, I conducted an advanced scan to identify the underlying operating system of the target gateway to better understand its potential vulnerabilities.
+
+Target Selection: I selected the primary gateway 192.168.1.1 from the initial host discovery results.
+
+Command: nmap -O -oN task1_os_detection 192.168.1.1
+
+Flag Explanation (-O): Enables OS detection by analyzing TCP/IP stack fingerprinting.
+
+Flag Explanation (-oN): Redirects the output into a formatted text file (task1_os_detection) for professional documentation.
+
+![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/fc34f4c56941664a7f24a88c664719068416f369/images/task.1.png)
+
 
 
 
