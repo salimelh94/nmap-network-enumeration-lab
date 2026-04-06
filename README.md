@@ -44,4 +44,10 @@ nmap -sn 192.168.1.0/24
 ---
 
 ## 🖼️ Evidence
-<img width="612" height="397" alt="Screenshot 2026-04-06 185204" src="https://github.com/user-attachments/assets/c2ac38b1-3c3d-45c9-828b-0732981435b2" />
+
+<img width="612" height="397" alt="Nmap Scan Evidence" src="https://github.com/user-attachments/assets/c2ac38b1-3c3d-45c9-828b-0732981435b2" />
+
+---
+
+## ⚖️ Ethical Disclosure
+This project was conducted in a strictly private and authorized lab environment.
