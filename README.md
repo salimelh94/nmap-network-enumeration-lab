@@ -40,6 +40,7 @@ Results:
 The scan successfully identified 4 live hosts within the 192.168.1.0/24 subnet. This allowed me to narrow down the targets for the subsequent service enumeration and vulnerability analysis phases.
 
 3️⃣ Service Enumeration & Version Fingerprinting
+
 Once the live hosts were identified, I performed a targeted scan on the primary target (192.168.1.1) to determine the specific services running and their respective versions.Command: nmap -sV 192.168.1.1Flag Explanation (-sV): This flag enables version detection. Nmap probes open ports to determine the exact software and version number, which is critical for identifying known vulnerabilities (CVEs).
 
 Technical Analysis of Results:T
@@ -59,6 +60,7 @@ Save results to a file for reporting
 
 
 📊 4️⃣ Documentation of Findings & Security Analysis
+
 After completing the enumeration phase, I consolidated the raw data into a structured format to evaluate the security posture of each discovered asset.
 
 Host IP	        Status	   Open Ports	                                    Identified Services	Security Assessment				
@@ -70,6 +72,7 @@ Host IP	        Status	   Open Ports	                                    Identif
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/4.Report.png)
 
 🔍 5️⃣ Investigation & Professional Interpretation
+
 As a Security Analyst, I reflected on the discovered landscape to identify anomalies or potential threats:
 
 Expected Traffic vs. Anomalies: The presence of DNS and HTTP/S on the router, alongside Windows Management services (SMB/RPC) and Splunk on the host, aligns with a standard lab/office environment.
