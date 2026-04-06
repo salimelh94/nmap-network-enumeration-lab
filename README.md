@@ -1,9 +1,9 @@
-# 🛡️ Network Scanning & Host Enumeration with Nmap
+### Network Scanning & Host Enumeration with Nmap
 
 ![Nmap](https://img.shields.io/badge/Tool-Nmap-blue?style=for-the-badge&logo=nmap)
 ![Kali Linux](https://img.shields.io/badge/Platform-Kali_Linux-lightgrey?style=for-the-badge&logo=kali-linux)
 
-## 🚀 Project Overview
+## Project Overview
 This project demonstrates professional infrastructure discovery and security auditing techniques using **Nmap**. The primary objective was to identify the attack surface of a local network by enumerating active hosts, identifying open ports, and fingerprinting services/OS versions.
 
 > **Key Skill:** Reconnaissance & Threat Modeling for SOC Analysts.
@@ -15,9 +15,9 @@ This project demonstrates professional infrastructure discovery and security aud
 
 ---
 
-## ⚙️ Execution Workflow
+##  Execution Workflow
 
-### 1️⃣ Network Discovery & Scoping
+### 1️ Network Discovery & Scoping
 Before scanning, I identified the network boundaries to ensure an authorized and efficient scan.
 * **Local Gateway:** `192.168.1.1`
 * **Subnet Range:** `192.168.1.0/24`
@@ -25,7 +25,7 @@ Before scanning, I identified the network boundaries to ensure an authorized and
 
   ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/098b9199b20885f31362ed041233a90fbfef6548/ipconfig.png)
 
-### 2️⃣ Host Discovery (Ping Sweep)
+### 2️ Host Discovery (Ping Sweep)
 After defining the network scope, the next phase is to identify live assets. I performed a Ping Sweep to map the network without performing a full port scan, which is essential for maintaining a low profile and saving time during the reconnaissance phase.
 
 Command: nmap -sn 192.168.1.0/24
@@ -39,7 +39,7 @@ Technical Benefit: Using a ping scan is a "stealthier" and faster way to discove
 Results:
 The scan successfully identified 4 live hosts within the 192.168.1.0/24 subnet. This allowed me to narrow down the targets for the subsequent service enumeration and vulnerability analysis phases.
 
-### 3️⃣ Service Enumeration & Version Fingerprinting
+### 3️ Service Enumeration & Version Fingerprinting
 
 Once the live hosts were identified, I performed a targeted scan on the primary target (192.168.1.1) to determine the specific services running and their respective versions.
 
@@ -62,13 +62,13 @@ Save results to a file for reporting
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/Screenshot%202026-04-06%20200916.png)
 
 
-### 📊 4️⃣ Documentation of Findings & Security Analysis
+### 4️ Documentation of Findings & Security Analysis
 
 After completing the enumeration phase, I consolidated the raw data into a structured format to evaluate the security posture of each discovered asset.
 
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/4.Report.png)
 
-### 🔍 5️⃣ Investigation & Professional Interpretation
+### 5️ Investigation & Professional Interpretation
 
 As a Security Analyst, I reflected on the discovered landscape to identify anomalies or potential threats:
 
@@ -87,10 +87,11 @@ Unknown Host (192.168.1.3): Although "silent," this host warrants further monito
 Summary of Security Posture
 The network appears well-maintained with no immediate "low-hanging fruit" vulnerabilities like unencrypted management ports. The primary focus for future hardening should be the SMB and Splunk interfaces on the Windows host to prevent unauthorized access to sensitive logs or file shares.
 
-### 🔍 6️⃣ Extended Tasks: Nmap Deep-Dive
+### 6️ Extended Tasks: Nmap Deep-Dive
 
 
 Phase 6.1: Operating System Detection & Fingerprinting
+
 In this phase, I conducted an advanced scan to identify the underlying operating system of the target gateway to better understand its potential vulnerabilities.
 
 Target Selection: I selected the primary gateway 192.168.1.1 from the initial host discovery results.
@@ -146,7 +147,7 @@ Security Posture: The device follows the Principle of Least Privilege by only ex
 
 Hardening Verification: No high-risk or legacy ports were detected, such as SSH (22), Telnet (23), or non-standard UPnP ports. This indicates a solid baseline security configuration.
 
-🔍 6.3 Phase: UDP Service Discovery
+ 6.3 Phase: UDP Service Discovery
 
 To ensure a comprehensive analysis of the target's attack surface, I performed a UDP Scan. Unlike TCP, UDP is a connectionless protocol, which requires a different scanning approach and often results in longer durations due to the lack of session acknowledgments.
 
@@ -174,7 +175,7 @@ The absence of common UDP services such as SNMP (161) or NTP (123) suggests that
 Final Posture:
 The router demonstrates a strong security posture by rejecting the vast majority of UDP services and only exposing essential DNS functionality.
 
-### 🔬 7️⃣ Phase: Port State Analysis & Vulnerability Research
+### 7️ Phase: Port State Analysis & Vulnerability Research
 
 In this final phase, I investigated the "Reason" behind port states and executed Nmap Scripting Engine (NSE) scripts to identify potential security flaws.
 
@@ -216,14 +217,14 @@ Custom Firmware: The web interface uses proprietary code rather than standard Ap
 
 Security Headers: Manual review confirmed the presence of X-Frame-Options and HSTS, indicating that the vendor has implemented some modern security controls.
 
-🛡️ 8️⃣ Recommended Remediation
+### 8️ Recommended Remediation
 
 To mitigate the identified risks (Slowloris DoS and unauthorized access), I recommend the following security controls:
 
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/44c9a43f946e5e70127eb747016e5326c136d647/images/5.png)
 
 
-### 🏁 Final Project Conclusion
+### Final Project Conclusion
 
 This Nmap lab provided a full-cycle security assessment of a local network environment. By moving from Basic Discovery to Advanced Vulnerability Scripting, I demonstrated:
 
@@ -240,5 +241,5 @@ Capacity to provide actionable remediation steps to stakeholders.
 
 
 
-## ⚖️ Ethical Disclosure
+##  Ethical Disclosure
 This project was conducted in a strictly private and authorized lab environment.
