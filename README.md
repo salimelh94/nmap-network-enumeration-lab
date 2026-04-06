@@ -46,6 +46,7 @@ Once the live hosts were identified, I performed a targeted scan on the primary 
 Command: nmap -sV 192.168.1.1
 
 Flag Explanation (-sV): This flag enables version detection. Nmap probes open ports to determine the exact software and version number, which is critical for identifying known vulnerabilities (CVEs).
+
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/3.sv.png)
 
 Technical Analysis of Results:
@@ -55,6 +56,7 @@ The scan revealed that out of 1000 standard TCP ports, 997 are closed (responded
 
 Security Interpretation:
 Fingerprinting results strongly suggest this is a network gateway (router). The limited number of open ports indicates a reduced attack surface, following a standard security posture for consumer or small-office networking equipment. 
+
 Save results to a file for reporting 
 
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/Screenshot%202026-04-06%20200916.png)
