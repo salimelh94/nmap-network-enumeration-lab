@@ -66,12 +66,6 @@ Save results to a file for reporting
 
 After completing the enumeration phase, I consolidated the raw data into a structured format to evaluate the security posture of each discovered asset.
 
-Host IP	        Status	   Open Ports	                                    Identified Services	Security Assessment				
-192.168.1.1	     Up	       53, 80, 443	                    Router (DNS, HTTP/S)	Low Risk. Standard gateway configuration with web management enabled.				
-192.168.1.22	   Up	     135, 139, 445, 8000/8089	          Windows Host (SMB, Splunk)	Medium Risk. Critical Windows services (SMB) and Splunk dashboard exposed.				
-192.168.1.3	     Up	      None	Unknown Device	            Filtered. Device is active but hardened; no services are exposed to the network.				
-192.168.1.4	    Down	    None	N/A	Offline.                Host did not respond to ICMP or ARP probes during the scan.		
-
 ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/68eb60eaa1baa792bf12ed6cfa56a74abc3bcc20/images/4.Report.png)
 
 ### 🔍 5️⃣ Investigation & Professional Interpretation
