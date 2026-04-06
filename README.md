@@ -41,7 +41,11 @@ The scan successfully identified 4 live hosts within the 192.168.1.0/24 subnet. 
 
 ### 3️⃣ Service Enumeration & Version Fingerprinting
 
-Once the live hosts were identified, I performed a targeted scan on the primary target (192.168.1.1) to determine the specific services running and their respective versions.Command: nmap -sV 192.168.1.1Flag Explanation (-sV): This flag enables version detection. Nmap probes open ports to determine the exact software and version number, which is critical for identifying known vulnerabilities (CVEs).
+Once the live hosts were identified, I performed a targeted scan on the primary target (192.168.1.1) to determine the specific services running and their respective versions.
+
+Command: nmap -sV 192.168.1.1
+
+Flag Explanation (-sV): This flag enables version detection. Nmap probes open ports to determine the exact software and version number, which is critical for identifying known vulnerabilities (CVEs).
 
 Technical Analysis of Results:T
 he scan revealed that out of 1000 standard TCP ports, 997 are closed (responded with RST packets), leaving 3 active entry vectors:
