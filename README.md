@@ -131,6 +131,7 @@ Analyst Insight: By utilizing the -sS flag, I was able to verify that the three 
 This technique is standard in professional assessments to minimize the "noise" generated on the target network's monitoring logs.
 
 After Scan Completion we open the output: task2_syn_scan.txt and we will see results similar to :
+
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/8dc75d4babc958c29cf87dfdc0b43d0a64527fa7/images/task2.png)
 
 Phase 6.3: Final Security Assessment & Findings
