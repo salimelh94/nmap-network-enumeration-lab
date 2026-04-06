@@ -109,6 +109,7 @@ The scan generated a series of OS guesses based on the target's network response
 ![images alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/80409a337ec5d9dc48e69525bdd52c06ee2666c3/images/2.png)
 
 Phase 6.2: Stealth Scanning (TCP SYN Scan)
+
 In this task, I performed a TCP SYN Scan (also known as a "Half-Open" scan) on the gateway to compare efficiency and stealthiness against previous service scans.
 
 Command: nmap -sS 192.168.1.1 -oN task2_syn_scan.txt
@@ -161,7 +162,9 @@ Flag Explanation (-sU): Instructs Nmap to perform a UDP scan to identify service
 Flag Explanation (-oN): Redirects the output to a standard text file (task3_udp_scan.txt) for the project's audit trail.
 
 The scan identified that the majority of the 1,000 scanned ports are secured, with only one confirmed service active : 53/udp 
-nterpretation & Security Assessment
+
+Interpretation & Security Assessment
+
 Significance of Port 53/UDP:
 Port 53 is designated for the Domain Name System (DNS). Gateways often perform DNS forwarding to enhance local browsing speeds. Seeing this open for both TCP and UDP (as noted in Task 2 and 3) is a standard configuration.
 
