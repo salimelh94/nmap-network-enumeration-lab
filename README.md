@@ -23,6 +23,8 @@ Before scanning, I identified the network boundaries to ensure an authorized and
 * **Subnet Range:** `192.168.1.0/24`
 * **Command:** `ip a` or `ifconfig`
 
+  ![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/098b9199b20885f31362ed041233a90fbfef6548/ipconfig.png)
+
 ### 2️⃣ Host Discovery (Ping Sweep)
 To minimize noise and avoid detection by basic firewalls, I performed a host discovery scan to map live assets.
 ```bash
