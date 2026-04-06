@@ -45,7 +45,7 @@ nmap -sn 192.168.1.0/24
 
 ## 🖼️ Evidence
 
-![ipconfig output](ipconfig.png)
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/098b9199b20885f31362ed041233a90fbfef6548/ipconfig.png)
 
 ---
 
