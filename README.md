@@ -50,10 +50,7 @@ Flag Explanation (-sV): This flag enables version detection. Nmap probes open po
 Technical Analysis of Results:T
 he scan revealed that out of 1000 standard TCP ports, 997 are closed (responded with RST packets), leaving 3 active entry vectors:
 
-Port	    Status	   Service	          Analyst Insights					
-53/tcp	  Open	   Domain (DNS)	      Cloudflare Public DNS. Indicates the device handles name resolution.					
-80/tcp	  Open	   HTTP	              Router Web Interface.Returns a 302 redirect, likely pointing to the secure HTTPS port.					
-443/tcp	  Open	   HTTPS	            Secure Administration Panel (SSL). This is the primary management point for the device.					
+![image alt](https://github.com/salimelh94/nmap-network-enumeration-lab/blob/d0627f8f761664f6477017097f4f117d5d53c232/images/3-1.png)
 
 Security Interpretation:
 Fingerprinting results strongly suggest this is a network gateway (router). The limited number of open ports indicates a reduced attack surface, following a standard security posture for consumer or small-office networking equipment. 
