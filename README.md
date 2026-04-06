@@ -176,6 +176,7 @@ The router demonstrates a strong security posture by rejecting the vast majority
 In this final phase, I investigated the "Reason" behind port states and executed Nmap Scripting Engine (NSE) scripts to identify potential security flaws.
 
 7.1: Network Response Analysis (--reason)
+
 I used the --reason flag to understand exactly why Nmap categorized ports as open or closed.
 
 Command: nmap --reason -p- 192.168.1.1 -oN task4_reasons.txt
@@ -189,9 +190,6 @@ Key Finding: Open ports (53, 80, 443) returned a syn-ack with a ttl 64. This con
 Closed Ports: 65,532 ports returned a reset (RST) packet, indicating the device is reachable but no service is listening.
 
 7.2: Lightweight Vulnerability Scan
-
-[!CAUTION]
-Safety Reminder: Only perform vulnerability scans on authorized systems. These scans can be resource-intensive and may trigger security alerts.
 
 Command: nmap --script vuln 192.168.1.1 -oN task5_vuln_scan.txt
 
