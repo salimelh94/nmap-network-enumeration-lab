@@ -45,7 +45,7 @@ nmap -sn 192.168.1.0/24
 
 ## 🖼️ Evidence
 
-<img width="612" height="397" alt="Nmap Scan Evidence" src="https://github.com/user-attachments/assets/c2ac38b1-3c3d-45c9-828b-0732981435b2" />
+![ipconfig output](ipconfig.png)
 
 ---
 
